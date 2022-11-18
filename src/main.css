@@ -1,0 +1,299 @@
+@import "../node_modules/normalize.css/normalize.css";
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #429feb;
+}
+
+html,
+body  {
+  font-size: 16px;
+  word-break: keep-all;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, Bazier Square,
+    Noto Sans KR, Segoe UI, Apple SD Gothic Neo, Roboto, Helvetica Neue, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
+  letter-spacing: -0.3px;
+  color: #282A35;
+  background: #eeeeee;
+  padding-bottom: 2rem;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.dark-mode {
+  background-color:#282A35;
+  color: #eeeeee;
+
+}
+
+
+
+@media screen and (max-width: 960px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+}
+
+body:before {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 10px;
+  background:#184e7b;
+  background: linear-gradient(to right, #184e7b, #277BC0, #31a2ff);
+}
+
+
+
+section {
+  padding: 0 2rem;
+}
+
+p {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+a {
+  color: #277BC0;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #31a2ff;
+}
+
+h1 {
+  font-size: 5rem;
+  line-height: 1.1;
+}
+
+@media screen and (max-width: 960px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+
+
+h2 {
+  font-size: 3rem;
+  margin: 3rem 0 0rem 0;
+}
+
+h1-2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+}
+
+h4 {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+}
+
+@media screen and (max-width: 960px) {
+  h4 {
+    font-size: 1.5rem;
+  }
+}
+
+h5 {
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+}
+
+ul > li {
+  position: relative;
+  padding: 0.2rem 0 0.2rem 1rem;
+}
+
+ul > li:before {
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  content: "•";
+  color: #277BC0;
+}
+
+.container {
+  width: 100%;
+  max-width: 50rem;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.period-mark {
+  color: #277BC0;
+}
+
+.big-paragraph {
+  font-size: 2rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 960px) {
+  .big-paragraph {
+    font-size: 1.5rem;
+  }
+}
+
+.experience {
+  flex-direction: column;
+  padding: 3rem 0;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.company {
+  display: flex;
+  flex-direction: column;
+}
+.other {
+  flex-direction: column;
+  padding: 3rem 0;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.role {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.project {
+  padding: 1.5rem 0rem;
+}
+
+.project:first-child {
+  padding-top: 0;
+}
+
+.time {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.toggleContainer {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  margin-right:25px;
+}
+
+.toggleSwitchContainer { 
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+.toggleSwitch {
+  width: 3.8rem;
+  height: 2rem;
+  display: block;
+  position: relative;
+  border-radius: 2rem;
+  background-color:  #eeeeee;
+  border: 1px solid #dadada;
+  cursor: pointer;
+}
+
+
+.toggleSwitch .toggleButton {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: .2rem;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background:#3e3e41;
+  display: flex;
+
+
+}
+
+.toggleLabel {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.light {
+  width: 14px;
+  height: 14px;
+  align-self:center;
+  margin-left: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+.dark {
+  width: 0px;
+  height: 0px;
+  align-self:center;
+  margin-right: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+
+/* 체크박스가 체크될 시 변경되는 요소 */
+#toggle:checked ~ .toggleSwitch {
+  background: #282A35;
+}
+
+
+#toggle:checked ~ .toggleSwitch .toggleButton {
+  /* 100% -> 끝위치, 2.8rem -> 버튼 크기 */
+  left: calc(100% - 1.7rem);
+  background: #eeeeee;
+}
+
+#toggle:checked ~  .toggleSwitch .toggleButton .light {
+  width: 0px;
+  height: 0px;
+
+}
+
+
+#toggle:checked ~ .toggleSwitch .toggleButton .dark {
+  width: 16px;
+  height: 16px;
+
+}
+
+.toggleSwitch, .toggleButton {
+  transition: all 0.2s ease-in;
+}
+
+
+
